@@ -1,0 +1,24 @@
+import MemoryGame from "../../components/memory-game"
+import { ThemeToggle } from "@/components/theme-toggle"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { attributesData } from "@/data/bible-data"
+
+export default function AttributesPage() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-background text-foreground">
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center sm:text-left">Attributes of God</h1>
+          <div className="flex items-center gap-4">
+            <Link href="/" passHref>
+              <Button variant="outline">Home</Button>
+            </Link>
+            <ThemeToggle />
+          </div>
+        </div>
+        <MemoryGame title="Attributes of God Memory Work" data={attributesData} />
+      </div>
+    </main>
+  )
+}
